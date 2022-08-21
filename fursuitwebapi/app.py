@@ -6,6 +6,7 @@ from api import routes
 from pathlib import Path
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flasgger import Swagger
 
 
 
