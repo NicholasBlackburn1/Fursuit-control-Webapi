@@ -20,7 +20,10 @@ non web endpoints ie vars
 # folder and api
 folderbase = "FursuitControl/"
 url = "0.0.0.0"
-zmqport = "5000"
+
+#zmq
+zmqip = "127.0.0.1"
+zmqport = "4500"
 context = None
 socket = None
 

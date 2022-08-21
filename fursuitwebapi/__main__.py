@@ -22,7 +22,7 @@ def main():
     Consts.context = zmq.Context()
     Consts.socket = Consts.context.socket(zmq.PUB)
 
-    Consts.socket.bind("tcp://"+Consts.url % Consts.zmqport)
+    Consts.socket.bind("tcp://"+str(Consts.zmqip)+":"+str(Consts.zmqport))
     consolelog.PipeLine_Ok("started ZMQ Server...")
 
     appy.run(threaded=True, debug=True, host=Consts.url, port=2000)
