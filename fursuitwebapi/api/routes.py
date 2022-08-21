@@ -36,6 +36,15 @@ def ledstatus():
     consolelog.PipeLine_Ok("got status of lights are ....")
     return jsonify({"status": "need to finish"})
 
+# tests the all led lights 
+@apibp.route(Consts.ledcontrol+"test")
+def ledstatus():
+    consolelog.warning("going to test leds")
+
+    consolelog.PipeLine_Ok("got status of lights are ....")
+    return jsonify({"status": "need to finish"})
+
+
 
 
 

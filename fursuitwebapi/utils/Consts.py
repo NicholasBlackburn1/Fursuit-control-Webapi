@@ -1,6 +1,6 @@
 
 """
-endpoints
+endpoints  non zmq
 """
 
 base = "/fursuitcontrol/api"
@@ -11,6 +11,19 @@ ledcontrol = apibase + "led/"
 fancontrol = apibase + "fan/"
 voicecontrol =  apibase + "voice/"
 tempcontrol = apibase + "temp/"
+
+
+
+"""
+non web endpoints ie vars 
+"""
 # folder and api
 folderbase = "FursuitControl/"
 url = "0.0.0.0"
+
+
+
+
+"""
+zmq endpoints
+"""
