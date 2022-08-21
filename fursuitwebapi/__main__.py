@@ -19,7 +19,7 @@ def main():
     
     
 
-    app.run(threaded=True, debug=True, host=Consts.url, port=2000)
+    appy.run(threaded=True, debug=True, host=Consts.url, port=2000)
 
 
 
