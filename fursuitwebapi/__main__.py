@@ -17,13 +17,14 @@ def main():
         "sqlite:///" + str(pathlib.Path().absolute()) + "/"+ Consts.folderbase + "avatar.db"
     )
 
-    
-    consolelog.Warning("starting ZMQ Server...")
-    Consts.context = zmq.Context()
-    Consts.socket = Consts.context.socket(zmq.PUB)
+    # zmq stuff need to test in zmq
+    consolelog.Warning("starting ZMQ Server (need to renable it)...")
 
-    Consts.socket.bind("tcp://"+str(Consts.zmqip)+":"+str(Consts.zmqport))
-    consolelog.PipeLine_Ok("started ZMQ Server...")
+    #Consts.context = zmq.Context()
+    #Consts.socket = Consts.context.socket(zmq.PUB)
+    #Consts.socket.bind("tcp://0.0.0.0:2556")
+
+    consolelog.PipeLine_Ok("started ZMQ Server (need to renable it)...")
 
     appy.run(threaded=True, debug=True, host=Consts.url, port=2000)
 
