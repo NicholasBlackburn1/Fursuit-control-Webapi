@@ -8,6 +8,7 @@ authors = ["Nicholasb"]
 python = "^3.9"
 colorama = "^0.4.5"
 Flask = "^2.2.2"
+flasgger = "^0.9.5"
 [tool.poetry.dev-dependencies]
 
 [build-system]
