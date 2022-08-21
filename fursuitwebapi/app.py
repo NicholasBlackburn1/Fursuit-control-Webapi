@@ -4,7 +4,6 @@ app
 from utils import consolelog as logger
 from api import routes
 from pathlib import Path
-from charset_normalizer import api
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
