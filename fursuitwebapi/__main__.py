@@ -21,8 +21,15 @@ def main():
     consolelog.Warning("starting ZMQ Server (need to renable it)...")
 
     #Consts.context = zmq.Context()
+
+    #!pub socket
     #Consts.socket = Consts.context.socket(zmq.PUB)
     #Consts.socket.bind("tcp://0.0.0.0:2556")
+
+    #!recv socket
+    #Consts.socketrecv = Consts.context.socket(zmq.SUB)
+    #Consts.socketrecv.connect("tcp://0.0.0.0:2557")
+    
 
     consolelog.PipeLine_Ok("started ZMQ Server (need to renable it)...")
 

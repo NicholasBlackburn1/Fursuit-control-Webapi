@@ -24,8 +24,8 @@ url = "0.0.0.0"
 #zmq
 
 context = None
+socketrecv = None
 socket = None
-
 
 """
 zmq endpoints

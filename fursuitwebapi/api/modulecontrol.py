@@ -19,11 +19,11 @@ class modulecontrol(object):
     @soundact: allows sections to respond to surroundign sound
     
     """
-    def sendLedControl(self, sender, section, brightness, red, green, blue, soundact, currenttime):
+    def sendLedControl(self, socket, section, brightness, red, green, blue, soundact, currenttime):
         log.Debug("sending LED command to zmq")
 
-        sender.send_string("LEDCONTROL")
-        sender.send_json(
+        socket.send_string("LEDCONTROL")
+        socket.send_json(
             {
                 "section": int(section),
                 "brightness": int(brightness),
@@ -49,11 +49,11 @@ class modulecontrol(object):
     
     """
     
-    def sendFanControl(self, sender, fan, speed, temcontroled, currenttime):
+    def sendFanControl(self, socket, fan, speed, temcontroled, currenttime):
         log.Debug("sending FAN command to zmq")
 
-        sender.send_string("FANCONTROL")
-        sender.send_json(
+        socket.send_string("FANCONTROL")
+        socket.send_json(
             {
                 "fan": int(fan),
                 "speed": int(speed),
@@ -80,11 +80,11 @@ class modulecontrol(object):
     @outputvol: sets volume of output (0-255)
     """
     
-    def sendVoiceControl(self, sender, octive, semitone, speed, inputvol, outputvol, mic, speaker, currenttime):
+    def sendVoiceControl(self, socket, octive, semitone, speed, inputvol, outputvol, mic, speaker, currenttime):
         log.Debug("sending VOCIE command to zmq")
 
-        sender.send_string("VOICECONTROL")
-        sender.send_json(
+        socket.send_string("VOICECONTROL")
+        socket.send_json(
             {   
                 "mic":  str(mic),
                 "speaker": str(speaker),
@@ -98,6 +98,31 @@ class modulecontrol(object):
         )
         time.sleep(0.5)
         log.PipeLine_Ok("sent Face Count to zmq socket")
+
+
+
+
+    """
+    recves temp data
+
+    @probe: selects the probe
+    @temp: grabs current temp 
+
+    """
+    def recvTempData(self, socket, probe, temp, currenttime):
+        log.Debug("Recving temp data...")
+
+        socket.recv_string("TEMPCONTROL")
+        socket.send_json(
+            {   
+                "probe":  str(probe),
+                "temp": str(temp),
+                "time": str(currenttime),
+            }
+        )
+        time.sleep(0.5)
+        log.PipeLine_Ok("RECVED TEMP to zmq socket")
+
 
 
 
