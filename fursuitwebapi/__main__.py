@@ -11,7 +11,7 @@ import app
 def main():
     consolelog.info("starting apiserever...")
 
-    app = create_app()
+    app.create_app()
     app.config["SQLALCHEMY_DATABASE_URI"] = (
         "sqlite:///" + str(pathlib.Path().absolute()) + "/"+ Consts.folderbase + "avatar.db"
     )
