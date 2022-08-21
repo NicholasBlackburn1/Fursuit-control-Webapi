@@ -20,8 +20,8 @@ non web endpoints ie vars
 # folder and api
 folderbase = "FursuitControl/"
 url = "0.0.0.0"
-
-
+context = None
+socket = None
 
 
 """

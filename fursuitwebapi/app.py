@@ -43,6 +43,5 @@ def create_app():
     app.register_blueprint(routes.apibp)
     logger.PipeLine_Ok("REGISTERED blueprints")
 
-    logger.info("setting foxserver database..")
 
     return app

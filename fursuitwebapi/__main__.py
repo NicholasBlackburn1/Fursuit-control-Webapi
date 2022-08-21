@@ -5,6 +5,7 @@ main class
 import pathlib
 from utils import consolelog, Consts
 import app
+import zmq
 
 
 # main function
@@ -17,7 +18,10 @@ def main():
     )
 
     
-    
+    consolelog.Warning("starting ZMQ Server...")
+    Consts.context = zmq.Context()
+    Consts.socket = Consts.context.socket(zmq.PUB)
+    consolelog.PipeLine_Ok("started ZMQ Server...")
 
     appy.run(threaded=True, debug=True, host=Consts.url, port=2000)
 

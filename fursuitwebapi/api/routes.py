@@ -38,7 +38,7 @@ def ledstatus():
 
 # tests the all led lights 
 @apibp.route(Consts.ledcontrol+"test")
-def ledstatus():
+def ledtest():
     consolelog.warning("going to test leds")
 
     consolelog.PipeLine_Ok("got status of lights are ....")
