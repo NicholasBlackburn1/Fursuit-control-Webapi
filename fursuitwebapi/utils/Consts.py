@@ -21,6 +21,14 @@ non web endpoints ie vars
 folderbase = "FursuitControl/"
 url = "0.0.0.0"
 
+"""
+led vars 
+"""
+ledstrip1 = 0
+ledstrip2 = 1
+ledstrip3 = 2
+ledstrip4 = 3 
+
 #zmq
 
 context = None
