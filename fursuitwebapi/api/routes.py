@@ -46,6 +46,21 @@ def ledtest():
 
 
 
+# seting up led strip control 
+#! color control red,green,blue,brightness
+@apibp.route(Consts.ledcontrol+"setwholestripcolor")
+def setledstripcolor(red, green, blue, brightness, strip):
+
+    consolelog.PipeLine_Data("Color values for led strip"+" "+str(strip)+" ")
+    consolelog.PipeLine_Data("red: "+str(red))
+    consolelog.PipeLine_Data("green: "+str(green))
+    consolelog.PipeLine_Data("blue: "+str(blue))
+    consolelog.PipeLine_Data("brighightness: "+str(brightness))
+
+
+
+
+
 
 
 
